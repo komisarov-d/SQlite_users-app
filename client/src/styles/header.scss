@@ -206,3 +206,43 @@
     }
   }
 }
+@media (max-width: 410px) {
+  .mheader {
+    height: 710px;
+    max-width: 100%;
+    background: url("./img/headerBG.png") top / cover no-repeat;
+    &__title {
+      font-size: 28px;
+      padding-top: 10px;
+    }
+    & > div > div {
+      flex-wrap: wrap;
+    }
+    &__block {
+      width: 100%;
+      padding-left: 5px;
+      align-items: flex-end;
+      & > h2 {
+        font-size: 28px;
+        line-height: 30px;
+      }
+      & > p {
+        font-size: $normalFont;
+        padding: 14px 10px;
+        line-height: 14px;
+      }
+      & > a {
+        align-content: center;
+        margin: 18px 20px 0 0;
+        font-size: $normalFont;
+      }
+    }
+    &__phone {
+      width: 230px;
+      height: 400px;
+      position: absolute;
+      top: 270px;
+      left: 22%;
+    }
+  }
+}

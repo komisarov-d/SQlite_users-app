@@ -1,5 +1,21 @@
-export const Table = () => {
-
+export const Table = ({currentPortion}) => {
+  if (!currentPortion) {
+    return <p>No item</p>
+  }
+  const tableEl = currentPortion.map(item => {
+        return (
+          <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.first_name}</td>
+                <td>{item.last_name}</td>
+                <td>{item.email}</td>
+                <td>{item.gender}</td>
+                <td>{item.ip_address}</td>
+                <td>{item.clicks}</td>
+                <td>{item.page_views}</td>
+          </tr>
+    )
+  })
   return(
      <div className="table__wrapper">
           <table className='table'>
@@ -16,26 +32,7 @@ export const Table = () => {
                   </tr>
                </thead>
                <tbody className='table__body'>
-                   <tr>
-                      <td>Id</td>
-                      <td>First name</td>
-                      <td>Last name</td>
-                      <td>Email</td>
-                      <td>Gender</td>
-                      <td>IP address</td>
-                      <td>Total clicks</td>
-                      <td>Total page views</td>
-                    </tr>
-                      <tr>
-                      <td>Id</td>
-                      <td>First name</td>
-                      <td>Last name</td>
-                      <td>Email</td>
-                      <td>Gender</td>
-                      <td>IP address</td>
-                      <td>Total clicks</td>
-                      <td>Total page views</td>
-                    </tr>
+                {tableEl}
                </tbody>
           </table>
           </div>
